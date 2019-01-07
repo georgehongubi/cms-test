@@ -1,0 +1,6 @@
+{
+    "name": "Contentful UI extension",
+    "id": "cf-contentful-ui-extension",
+    "fieldTypes": ["Object"],
+    "srcdoc": "./index.html"
+  }

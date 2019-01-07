@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head><!-- ... --></head>
+  <body>
+    <div id="content">
+      <select id="countrySelect" class="cf-form-input">
+        <option value="en-us">en-us</option>
+        <option value="en-gb">en-gb</option>
+        <option value="en-ca">en-ca</option>
+        <option value="en-au">en-au</option>
+        <option value="de-de">de-de</option>
+        <option value="fr-fr">fr-fr</option>
+        <option value="fr-ca">fr-ca</option>
+        <option value="it-it">it-it</option>
+        <option value="es-mx">es-mx</option>
+        <option value="pt-br">pt-br</option>
+        <option value="ru-ru">ru-ru</option>
+        <option value="pl-pl">pl-pl</option>
+        <option value="nl-nl">nl-nl</option>
+      </select>
+    </div>
+    <script type="text/javascript">
+      // initialize the contentful extension
+      // using the UI extensions SDK
+      window.contentfulExtension.init( extension => {
+        const select = document.getElementById('countrySelect');
+        const value = extension.field.getValue();
+        select.value = value;
+        
+        // send changes to the Contentful web app
+        select.addEventListener( 'change', event => {
+          extension.field.setValue( event.target.value );
+        } );
+      } );
+    </script>
+  </body>
+</html>
